@@ -1,0 +1,22 @@
+{
+  "kind": "evm_project",
+  "token": {
+    "contract": "LaunchToken",
+    "name": "The Comb",
+    "symbol": "COMB",
+    "decimals": 18
+  },
+  "contracts": [
+    {
+      "contract": "CombWall",
+      "constructorArgs": []
+    }
+  ],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "THE COMB: a honeycomb wall of 1,024 cells (ids 0..1023) left for humans. LaunchToken is the standard fixed-supply ERC-20 'The Comb' (COMB), 18 decimals, 1,000,000,000 tokens minted once to the factory, plain transfers only. CombWall (src/CombWall.sol) has no constructor parameters and no owner, admin, pause, upgrade or payable path: any wallet may claim exactly one empty cell with a 1-64 byte message (claim), rewrite its own message at most once every 24 hours (carve), and release its cell so it becomes claimable again (release). Views: cellOf, hasCell, ownerOf, messageOf, nextCarveAt, claimedCount, cells. Events: Claimed, Carved, Released. CombWall does not reference the token and holds no COMB; the pool pairs COMB with IMD at the launch policy's fee and the factory supplies the LP, MerkleDistributor and pool initialization guard."
+}
